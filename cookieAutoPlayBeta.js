@@ -192,15 +192,6 @@ AutoPlay.cheatGoldenCookies = function () {
 
 AutoPlay.handleClicking = function () {
   if (AutoPlay.Config.ClickMode == 0) return
-  if (!Game.Achievements['Neverclick'].won && (Game.cookieClicks <= 15)) {
-    AutoPlay.addActivity('Waiting for neverclick.')
-    return
-  }
-  if (Game.ascensionMode == 1 && AutoPlay.endPhase() &&
-      !Game.Achievements['True Neverclick'].won && !Game.cookieClicks) {
-    AutoPlay.addActivity('Waiting for true neverclick.')
-    return
-  }
   if (!Game.Achievements['Uncanny clicker'].won) { for (var i = 1; i < 6; i++) setTimeout(Game.ClickCookie, 50 * i) }
   if (Game.ascensionMode == 1 && Game.Achievements['Hardcore'].won) {
     setTimeout(Game.ClickCookie, 150)
